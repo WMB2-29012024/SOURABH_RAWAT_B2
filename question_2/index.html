@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const URL = "https://jsonplaceholder.typicode.com/todos";
+
+    function getData(URL) {
+        return new Promise((res, req) => {
+            fetch(URL)
+                .then(data => data.json())
+                .then(jsonData => res(jsonData))
+        })
+    }
+
+    getData(URL)
+        .then(res => console.log(res));
+
+</script>
+
+</html>

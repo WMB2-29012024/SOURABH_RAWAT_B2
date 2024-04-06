@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const URL = "https://jsonplaceholder.typicode.com/todos";
+
+    async function getData(URL) {
+        const data = await fetch(URL);
+        const jsonData = await data.json();
+        return jsonData;
+    }
+
+    async function endData(URL) {
+        const res = await getData(URL);
+        console.log(res);
+    }
+
+    endData(URL);
+
+</script>
+
+</html>

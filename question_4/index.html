@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para">Loading...</p>
+</body>
+<script>
+    const URL = "https://jsonplaceholder.typicode.com/todos";
+    const para = document.getElementById("para");
+
+    const getTodoData = async () => {
+        try {
+            async function getData(URL) {
+                const data = await fetch(URL);
+                const jsonData = await data.json();
+                return jsonData;
+            }
+
+            async function endData(URL) {
+                const res = await getData(URL);
+                console.log(res);
+                para.innerText = "DATA Fetched!!";
+            }
+
+            endData(URL);
+        }
+        catch {
+            para.innerText = "Failed to fetch data!!";
+        }
+    }
+
+    getTodoData();
+
+</script>
+
+</html>

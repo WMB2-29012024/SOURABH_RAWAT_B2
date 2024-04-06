@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outside">
+        <div id="inside"></div>
+        <p id="para">NO DATA!!</p>
+        <button id="button">Get Data</button>
+    </div>
+</body>
+<script>
+    const URL = "https://jsonplaceholder.typicode.com/todos";
+    const para = document.getElementById("para");
+    const button = document.getElementById("button");
+    const outside = document.getElementById("outside");
+    const inside = document.getElementById("inside");
+
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+
+
+        async function getEndData(URL) {
+            try {
+                async function getData(URL) {
+                    const data = await fetch(URL);
+                    const jsonData = await data.json();
+                    return jsonData;
+                }
+
+                async function endData(URL) {
+                    para.style.display = "none";
+                    outside.classList.add("loader-container");
+                    inside.classList.add("loader");
+                    const res = await getData(URL);
+                    para.innerText = "Data fetched!!";
+                    para.style.display = "block";
+                    outside.classList.remove("loader-container");
+                    inside.classList.remove("loader");
+                    console.log(res);
+                }
+
+                endData(URL);
+            } catch {
+                para.innerText = "Failed to fetch!!"
+            }
+        }
+
+        getEndData(URL);
+
+
+    })
+
+
+</script>
+
+</html>

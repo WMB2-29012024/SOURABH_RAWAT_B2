@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="previous">Previous</button>
+    <button id="next">Next</button>
+    <ul id="lists"></ul>
+</body>
+<script>
+    const count = 1;
+    const URL = `https://jsonplaceholder.typicode.com/todos/${count}`;
+    const previous = document.getElementById("previous");
+    const next = document.getElementById("next");
+    const lists = document.getElementById("lists");
+
+    next.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        async function getData(URL) {
+            const data = await fetch(URL);
+            const jsonData = await data.json();
+            return jsonData;
+        }
+
+        async function getEndData(URL) {
+            const res = await getData(URL);
+            const listItem = document.createElement("li");
+            listItem.innerText = res.title;
+            lists.appendChild(listItem);
+            console.log(res);
+            console.log(res.length);
+
+
+        }
+
+        getEndData(URL);
+    })
+
+</script>
+
+</html>
