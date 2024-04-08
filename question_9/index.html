@@ -13,14 +13,17 @@
     <ul id="lists"></ul>
 </body>
 <script>
-    const count = 1;
-    const URL = `https://jsonplaceholder.typicode.com/todos/${count}`;
+    let count = 0;
     const previous = document.getElementById("previous");
     const next = document.getElementById("next");
     const lists = document.getElementById("lists");
 
     next.addEventListener("click", (e) => {
         e.preventDefault();
+        lists.innerText = "";
+
+        count++;
+        let URL = `https://jsonplaceholder.typicode.com/todos/${count}`;
 
         async function getData(URL) {
             const data = await fetch(URL);
@@ -34,12 +37,40 @@
             listItem.innerText = res.title;
             lists.appendChild(listItem);
             console.log(res);
-            console.log(res.length);
-
-
         }
 
         getEndData(URL);
+
+    })
+
+    previous.addEventListener("click", (e) => {
+        e.preventDefault();
+        lists.innerText = "";
+
+
+        count--;
+        let URL = `https://jsonplaceholder.typicode.com/todos/${count}`;
+
+        async function getData(URL) {
+            const data = await fetch(URL);
+            const jsonData = await data.json();
+            return jsonData;
+        }
+
+        async function getEndData(URL) {
+            const res = await getData(URL);
+            const listItem = document.createElement("li");
+            listItem.innerText = res.title;
+            lists.appendChild(listItem);
+            console.log(res);
+
+            if (res.id === 1) {
+                previous.disabled = "true";
+            }
+        }
+
+        getEndData(URL);
+
     })
 
 </script>
