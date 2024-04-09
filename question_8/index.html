@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select name="" id="select">
+        <option selected disabled>Select</option>
+        <option value="1" id="user1">1</option>
+        <option value="2" id="user2">2</option>
+        <option value="3" id="user3">3</option>
+        <option value="4" id="user4">4</option>
+        <option value="5" id="user5">5</option>
+        <option value="6" id="user6">6</option>
+        <option value="7" id="user7">7</option>
+        <option value="8" id="user8">8</option>
+        <option value="9" id="user9">9</option>
+        <option value="10" id="user10">10</option>
+    </select>
+    <h1 id="postData"></h1>
+    <ul id="lists"></ul>
+</body>
+<script>
+    const select = document.getElementById("select");
+    const postData = document.getElementById("postData");
+    const lists = document.getElementById("lists");
+
+    select.addEventListener("change", (e) => {
+        e.preventDefault();
+
+        const userID = select.value;
+        const postUrl = `https://jsonplaceholder.typicode.com/posts?userId=${userID}`;
+
+        fetch(postUrl)
+            .then((res) => {
+                return res.json();
+            })
+            .then((posts) => {
+                const postID = posts[0].id;
+                const postUrl = `https://jsonplaceholder.typicode.com/comments?postId=${postID}`;
+
+                console.log(posts)
+
+                postData.innerHTML = `PostsID:${postID} 
+                PostTitle: ${posts[0].title} 
+                PostBody: ${posts[0].body}`;
+
+                return fetch(postUrl)
+            })
+            .then((res) => {
+                return res.json()
+            })
+            .then((comments) => {
+                console.log(comments);
+                comments.forEach((post) => {
+                    const list = document.createElement("li");
+                    list.innerText = `USER EMAIL: ${post.email}
+                     USER NAME: ${post.name}
+                      USER COMMENT: ${post.body}`;
+                    lists.appendChild(list);
+                })
+            })
+            .catch(err => console.log(err))
+
+
+    })
+</script>
+
+</html>
