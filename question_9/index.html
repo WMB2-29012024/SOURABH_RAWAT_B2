@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="search" name="search" id="searchInput" placeholder="Search by title...">
+    <ol id="postContainer"></ol>
+</body>
+<script>
+    const searchInput = document.getElementById("searchInput");
+    const postContainer = document.getElementById("postContainer");
+    const URL = "https://jsonplaceholder.typicode.com/posts";
+    let dataArray = [];
+
+    async function dataBy(URL) {
+        const data = await fetch(URL);
+        const jsonData = await data.json();
+        return jsonData;
+    }
+
+    async function endData() {
+        const res = await dataBy(URL);
+        dataArray = res;
+        creatingData(dataArray);
+    }
+    endData();
+
+    console.log(dataArray);
+
+    function creatingData(res) {
+        postContainer.innerHTML = "";
+        res.forEach(list => {
+            const lists = document.createElement("li");
+            lists.innerHTML = `<b>Title:</b> ${list.title} <br> <b>Message:</b > ${list.body}`;
+            postContainer.appendChild(lists);
+        });
+    }
+
+    searchInput.addEventListener("keyup", (e) => {
+        e.preventDefault();
+        const inputValue = e.target.value.toLowerCase();
+        console.log(inputValue)
+
+        const filteredData = dataArray.filter((postObj) => {
+            return postObj.title.toLowerCase().includes(inputValue);
+            console.log(creatingData)
+        })
+        creatingData(filteredData)
+
+    })
+</script>
+
+</html>
