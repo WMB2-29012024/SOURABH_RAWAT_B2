@@ -41,7 +41,7 @@
         });
     }
 
-    searchInput.addEventListener("keyup", (e) => {
+    searchInput.addEventListener("input", (e) => {
         e.preventDefault();
         const inputValue = e.target.value.toLowerCase();
         console.log(inputValue)
