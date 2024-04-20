@@ -1,8 +1,18 @@
-const menu = document.getElementById("menu");
-const lists = document.querySelector(".lists");
-const sidebar = document.querySelector(".sidebar");
+const bars = document.getElementById('icon');
+const sidebar = document.getElementById('sidebar');
 
-menu.addEventListener('click', () => {
-    menu.innerHTML = `<i class="fa-solid fa-bars"></i>`
-    lists.classList.add = "sidebar";
+let visible = true;
+
+bars.addEventListener('click', () => {
+    if (visible == true) {
+        bars.innerHTML = `☰`;
+        visible = false;
+        sidebar.style.left = '0px';
+
+    } else {
+        bars.innerHTML = `✖`;
+        visible = true;
+        sidebar.style.left = '-250px';
+    }
 })
+

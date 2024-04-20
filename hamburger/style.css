@@ -13,14 +13,13 @@ header {
     width: 100%;
     height: 60px;
 
-    img {
-        z-index: 4;
-        height: 34px;
-    }
+    .logo {
 
-    i {
-        color: #fff;
-        font: 28px;
+        img {
+            z-index: 4;
+            height: 34px;
+        }
+
     }
 
     .lists {
@@ -28,37 +27,70 @@ header {
         a {
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
+            line-height: 50px;
+            font-size: 22px;
             margin-right: 20px;
         }
     }
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100vh;
-        background-color: #333;
+
+    .icon {
+        color: #fff;
+        font-size: 24px;
+        display: none;
     }
+
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -700px;
+    background-color: #333;
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: -1;
+
 }
 
 @media screen and (max-width: 650px) {
-    .lists {
-        a {
-            display: none;
+
+    header {
+
+        .lists {
+
+            a {
+                display: none;
+            }
+        }
+
+        .icon {
+            display: block;
         }
     }
 
+
+
+
     .sidebar {
+        position: fixed;
+        top: 60px;
+        left: -250px;
+        width: 250px;
+        display: block;
         display: flex;
-        margin-top: 60px;
         flex-direction: column;
+        height: 100%;
         align-items: center;
+        background-color: #333;
+        transition: left 0.3s ease;
+        z-index: -1;
 
         a {
             color: #fff;
-            font-size: 18px;
+            font-size: 22px;
             margin-bottom: 12px;
             text-decoration: none;
         }
