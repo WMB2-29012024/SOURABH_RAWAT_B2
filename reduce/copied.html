@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Running...</h1>
+</body>
+<script>
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    Array.prototype.myReduce = function (callback, initialValue) {
+        if (!Array.isArray(callback)) {
+            return `${this} is not an array`;
+        }
+
+        let acc = initialValue;
+
+        for (let i = 0; i < this.length; i++) {
+            if (acc) {
+                acc = callback(acc, this[i], i, this);
+            } else {
+                acc = this[i];
+            }
+        }
+        return acc;
+    }
+
+    const result = arr.myReduce((acc, curr) => {
+        return acc += curr;
+    })
+    console.log(result);
+</script>
+
+</html>
