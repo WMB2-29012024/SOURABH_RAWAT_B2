@@ -1,0 +1,21 @@
+@media screen and (max-width:1271px) {
+    footer {
+
+        .footer-container {
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width:504px) {
+    section {
+        .container {
+            .hero-section {
+                flex-direction: column;
+
+            }
+        }
+    }
+}
