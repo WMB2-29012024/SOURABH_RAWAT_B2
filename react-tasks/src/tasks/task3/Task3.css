@@ -1,0 +1,12 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

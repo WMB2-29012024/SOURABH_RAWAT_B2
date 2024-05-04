@@ -1,0 +1,13 @@
+.list-items {
+    display: inline-block;
+    background-color: rgb(197, 246, 230);
+    border-radius: 6px;
+    margin: 6px;
+    padding: 6px 12px;
+
+    ul {
+        h2 {
+            color: rgb(151, 151, 124);
+        }
+    }
+}
