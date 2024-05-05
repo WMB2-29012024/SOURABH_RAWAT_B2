@@ -1,0 +1,12 @@
+.card-box {
+    display: inline-block;
+}
+
+.card {
+    width: 300px;
+    padding: 14px;
+    margin: 8px;
+    display: inline-block;
+    border: 2px solid pink;
+    background-color: rgb(242, 212, 217);
+}
