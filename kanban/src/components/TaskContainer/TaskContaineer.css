@@ -1,0 +1,8 @@
+.task-container {
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: rgb(190, 190, 236);
+}

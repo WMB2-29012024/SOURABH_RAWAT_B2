@@ -1,0 +1,23 @@
+.card {
+    height: 600px;
+    position: relative;
+    width: 250px;
+    background-color: #000;
+    border-radius: 10px;
+    margin: 12px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.add-btn {
+    /* position: absolute; */
+    /* bottom: 4px; */
+    padding: 4px 8px;
+}
