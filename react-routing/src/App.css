@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(188, 245, 192);
+}
+
+.logo {
+  margin-left: 4rem;
+}
+
+.lists {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  margin-right: 4rem;
+  font-weight: 700;
+  border: none;
+  list-style: none;
+}
+
+.list>a {
+  color: rgb(35, 134, 41);
+  text-decoration: none;
+}
+
+.list:hover {
+  font-size: 20px;
+  transition: all ease-in 100ms;
+}
