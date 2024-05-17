@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: antiquewhite;
+            display: flex;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px 0px #333;
+            background-color: #fff;
+        }
+
+        .upper-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px;
+            align-items: center;
+        }
+
+        .left {
+            display: flex;
+        }
+
+        .user-logo {
+            background-color: orange;
+            color: white;
+            margin-right: 12px;
+            padding: 12px;
+            border-radius: 50%;
+        }
+
+        .food-image {
+            width: 100%;
+        }
+
+        .food-description {
+            margin: 12px;
+        }
+
+        .extra-reaction {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px;
+        }
+
+        .fa-heart {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="upper-info">
+            <div class="left">
+                <p class="user-logo">R</p>
+                <span class="heading">
+                    <h4>Shrimp and chorizo paella</h4>
+                    <p>September 14, 2016</p>
+                </span>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical" style="color: #858585;"></i>
+        </div>
+        <img src="https://www.cnet.com/a/img/resize/69256d2623afcbaa911f08edc45fb2d3f6a8e172/hub/2023/02/03/afedd3ee-671d-4189-bf39-4f312248fb27/gettyimages-1042132904.jpg?auto=webp&fit=crop&height=675&width=1200"
+            alt="food-img" class="food-image">
+        <p class="food-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, facilis
+            quibusdam! Sed sequi quia quasi
+            inventore labore rerum mollitia impedit.</p>
+
+        <div class="extra-reaction">
+            <div class="share">
+                <i class="fa-solid fa-heart" style="color: #858585;"></i></i>
+                <i class="fa-solid fa-share" style="color: #858585;"></i></i>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="color: #858585;"></i></i>
+        </div>
+    </div>
+</body>
+
+</html>

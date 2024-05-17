@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .top,
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-right: 2rem;
+        }
+
+        .top-tooltip,
+        .bottom-tooltip {
+            position: relative;
+            background-color: skyblue;
+            border: none;
+            padding: 4px 6px;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .top-tooltip-text,
+        .bottom-tooltip-text {
+            position: absolute;
+            display: none;
+            background-color: #999;
+            border-radius: 2px;
+            padding: 4px 6px;
+        }
+
+        .top-tooltip:hover .top-tooltip-text {
+            display: block;
+            top: -39px;
+        }
+
+        .bottom-tooltip:hover .bottom-tooltip-text {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <button class="top-tooltip">Top ToolTip
+            <span class="top-tooltip-text">Top ToolTip</span>
+        </button>
+    </div>
+    <div class="bottom">
+        <button class="bottom-tooltip">Bottom ToolTip
+            <span class="bottom-tooltip-text">Bottom ToolTip</span>
+        </button>
+    </div>
+</body>
+
+</html>
