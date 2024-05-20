@@ -1,0 +1,11 @@
+.table-description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.07px;
+    padding: 16px;
+}
+
+.table-row-description:nth-child(2n+1) {
+    background-color: #F7F6FE;
+    ;
+}
