@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H2>Hello world</H2>
+    <script>
+        const nums = [1, 2, 3];
+        let newArr = [];
+        function permutation() {
+            let count = nums[0];
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] <= count) {
+                    count += nums[i]
+                    newArr.push(count);
+                }
+            }
+            return newArr;
+        }
+        console.log(permutation(nums));
+    </script>
+</body>
+
+</html>
