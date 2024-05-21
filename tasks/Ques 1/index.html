@@ -14,16 +14,16 @@
         const val = 3;
 
         let newArr = [];
+        let otherArr = []
         function removedOccurance() {
             for (let k = 0; k < nums.length; k++) {
-                if (val !== nums[k]) {
+                if (nums[k] == val) {
                     newArr.push(nums[k])
-                }
-                if (val == nums[k]) {
-                    newArr.push("_");
+                } else {
+                    otherArr.push('_')
                 }
             }
-            return newArr
+            return newArr.concat(otherArr)
         }
 
         console.log(removedOccurance(nums, val));
