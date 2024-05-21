@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Hello world</h2>
+    <script>
+        const nums = [2, 3, 2, 2];
+        function repeatFinder() {
+            for (let i = 0; i < nums.length; i++) {
+                let count = 0;
+                for (let j = 0; j < nums.length; j++) {
+                    if (nums[i] == nums[j]) {
+                        count++;
+                    }
+                }
+                return count
+            }
+        }
+
+        console.log(repeatFinder(nums));
+    </script>
+</body>
+
+</html>
